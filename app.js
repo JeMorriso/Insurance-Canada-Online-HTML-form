@@ -23,6 +23,7 @@ app.get("/", function(req, res) {
     res.render("index"); 
 });
 
+// just a tester post request - should really be adding this info to a database
 app.post("/", function(req, res) {
     var submittedData = req.body;
     console.log(typeof submittedData);
