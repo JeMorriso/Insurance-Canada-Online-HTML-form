@@ -1,0 +1,4 @@
+/* express knows to look in public directory */ 
+body {
+    background-color: #ced7e5;
+}
