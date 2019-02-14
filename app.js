@@ -29,14 +29,18 @@ app.post("/", function(req, res) {
     console.log(typeof submittedData);
     console.log(submittedData);
     
-    res.render("test-submit", {input: submittedData});
+    res.render("page2", {input: submittedData});
 });
 
 app.get("/submission", function(req, res) {
-    res.render("test-submit", {input: req.body});
+    res.render("page2", {input: req.body});
     
 });
 
-app.listen(process.env.PORT, process.env.IP, function() {
-    console.log("Server running dawg");
+// app.listen(process.env.PORT, process.env.IP, function() {
+//     console.log("Server running dawg");
+// });
+
+app.listen(3000, function() {
+  console.log("Server running dawg");
 });

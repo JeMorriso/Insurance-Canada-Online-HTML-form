@@ -1,4 +1,4 @@
 /* express knows to look in public directory */ 
-body {
+#body-custom-styling {
     background-color: #ced7e5;
 }
