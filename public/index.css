@@ -1,4 +1,19 @@
 /* express knows to look in public directory */ 
 #body-custom-styling {
-    background-color: #ced7e5;
+  background-color: #ced7e5;
+}
+
+.big {
+  font-size: 100px;
+  color: orange;
+  border: 5px dashed red;
+}
+
+/* Each section except the first should be hidden when wizard is first displayed */
+.section {
+  display: none;
+}
+
+#first-section {
+  display: block;
 }
