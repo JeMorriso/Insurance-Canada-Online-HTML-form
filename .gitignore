@@ -1,6 +1,7 @@
 node_modules/
-lib/
+reference/
 .vscode/
+lib/
 
 *.code-workspace
 
