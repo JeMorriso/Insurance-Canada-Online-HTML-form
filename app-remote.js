@@ -9,8 +9,8 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 
-app.use(express.static("public"));
-app.use(express.static("lib"));
+app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/lib"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
