@@ -1,12 +1,17 @@
+/* insurance canada online styling:
+    strong background: rgb(0, 148, 255)
+    light background: rgb(185, 225, 255)
+    */
+
 /* express knows to look in public directory */ 
-#body-custom-styling {
-  background-color: #ced7e5;
+
+.jumbotron {
+  background-color: rgb(0, 148, 255);
+  
 }
 
-.big {
-  font-size: 100px;
-  color: orange;
-  border: 5px dashed red;
+#body-custom-styling {
+  background-color: rgb(185, 225, 255);
 }
 
 /* Each section except the first should be hidden when wizard is first displayed */
@@ -14,6 +19,6 @@
   display: none;
 }
 
-#first-section {
+#section-one {
   display: block;
 }

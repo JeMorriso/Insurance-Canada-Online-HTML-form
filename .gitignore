@@ -3,3 +3,6 @@ lib/
 .vscode/
 
 *.code-workspace
+
+views/*-v*
+public/*-v*
