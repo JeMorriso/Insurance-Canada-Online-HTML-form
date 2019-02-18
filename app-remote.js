@@ -38,6 +38,6 @@ app.get("/submission", function(req, res) {
     
 });
 
-app.listen(3000, function() {
-  console.log("Server running dawg");
+app.listen(process.env.PORT, process.env.IP, function() {
+    console.log("Server running dawg");
 });
