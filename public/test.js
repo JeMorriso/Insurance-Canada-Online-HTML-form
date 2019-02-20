@@ -44,6 +44,7 @@ function showNextSection(currSection) {
   }
 
   if (shouldShow) {
+    // consider ajax load from file - use object (dictionary) to store files for each section index<->file
     nextSection.toggle();
   } 
   // show submit button if no more questions to answer
