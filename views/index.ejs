@@ -1,101 +1,141 @@
 <% include partials/header %>
 
-<div class="container">
+<!-- bootstrap requires container to use grid -->
+<div class="container bg-light border rounded-lg p-3">
   
   <!--action is just the URL-->
   <form action="/" method="POST">
     <div class="section" id="section-one">
-      <h3>Eligibility Questions</h3>
+      <h3 class="display-4">Eligibility Questions</h3>
+
+      <!-- bootstrap grids -->
       <!-- smoker div needed for control flow -->
       <!-- use bootstrap form-group class and wrap in divs once I fill out each page -->
-      <div id="smoker">
-        <p>
-          Cred meditation venmo, actually hammock you probably haven't heard of them trust fund activated charcoal. Poutine tote bag truffaut lomo readymade, hoodie edison bulb cronut shaman normcore single-origin coffee godard hashtag glossier. 
+      <div class="row" id="smoker">
+        <p class="col-sm-10">
+          Cred meditation venmo, actually hammock you probably haven't heard of them trust fund activated charcoal. Poutine
+          tote bag truffaut lomo readymade, hoodie edison bulb cronut shaman normcore single-origin coffee godard hashtag
+          glossier.
         </p>
-        <div class="form-check">
-          </label class="form-check-label">
-            <input class="form-check-input" type="radio" name="smoker" value="yes">yes
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="smoker" value="no">no
-          </label>
+        <div class="col-sm-2 align-items-end">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="smoker" id="smokerYes" value="yes">
+            <label class="form-check-label" for="smokerYes">yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="smoker" id="smokerNo" value="no">
+            <label class="form-check-label" for="smokerNo">no</label> 
+          </div>
         </div>
       </div>
 
-      <div id="otherInsurance">
-        <p>
+      <div class="row" id="otherInsurance">
+        <p class="col-sm-10">
           Kitsch small batch adaptogen truffaut, skateboard DIY VHS. Williamsburg ethical austin, prism biodiesel pop-up cray
           asymmetrical skateboard copper mug craft beer.
         </p>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" name="otherInsurance">yes
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" name="otherInsurance">no
-          </label>
+        <div class="col-sm-2">
+          <div class="form-check">
+            <input type="radio" class="form-check-input" value="yes" name="otherInsurance" id="otherYes">
+            <label class="form-check-label" for="otherYes">yes</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" value="no" name="otherInsurance" id="otherNo">
+            <label class="form-check-label" for="otherNo">no</label>
+          </div>
         </div>
       </div>
       <button type="button" class="btn btn-secondary section-submit">page 2</button>
     </div>
 
+
     <div class="section" id="section-two">
-      <p>
-        Live-edge farm-to-table humblebrag mumblecore flexitarian pabst blog. 90's letterpress YOLO listicle chicharrones
-        tattooed. Lyft godard cold-pressed swag tbh DIY. Actually drinking vinegar hot chicken selvage keffiyeh chia pug.
-      </p>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" value="yes" name="partB">yes
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="radio" value="no" name="partB">no
-        </label>
-      </div>
+      <h3 class="display-4">Guaranteed Acceptance Life</h3>
+      <div class="row">
+        <p class="col-sm-10">
+          Live-edge farm-to-table humblebrag mumblecore flexitarian pabst blog. 90's letterpress YOLO listicle chicharrones
+          tattooed. Lyft godard cold-pressed swag tbh DIY. Actually drinking vinegar hot chicken selvage keffiyeh chia pug.
+        </p>
+        <div class="col-sm-2 align-items-end">
+          <div class="form-check">
+            <input type="radio" class="form-check-input" value="yes" name="partB" id="s2y">
+            <label class="form-check-label" for="s2y">yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="no" name="partB" id="s2n">
+            <label class="form-check-label" for="s2n">no</label>
+          </div>
+        </div>
+      </div>      
       <button type="button" class="btn btn-secondary section-submit">page 3</button>
     </div>
 
+
     <div class="section" id="section-three">
-      <p>
-        Health goth vaporware try-hard fam, before they sold out etsy tilde shabby chic vape pabst cray. Raclette tacos wolf
-        pork belly chia try-hard pok pok craft beer celiac.
-      </p>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="radio" value="yes" name="partC">yes
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="radio" value="no" name="partC">no
-        </label>
+      <h3 class="display-4">Deferred Life</h3>
+      <div class="row">
+        <p class="col-sm-10">
+          Health goth vaporware try-hard fam, before they sold out etsy tilde shabby chic vape pabst cray. Raclette tacos wolf
+          pork belly chia try-hard pok pok craft beer celiac.
+        </p>
+        <div class="col-sm-2 align-items-end">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="yes" name="partC" id="s3y">
+            <label class="form-check-label" for="s3y">yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="no" name="partC" id="s3n">
+            <label class="form-check-label" for="s3n">no</label>
+          </div>
+        </div>
       </div>
       <button type="button" class="btn btn-secondary section-submit">page 4</button>
     </div>
 
+
     <div class="section" id="section-four">
-      <p>
-        Single-origin coffee thundercats hashtag kickstarter bicycle rights. Helvetica semiotics mustache stumptown gluten-free
-        authentic messenger bag portland deep v sustainable.
-      </p>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="radio" value="yes" name="partD">yes
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="radio" value="no" name="partD">no
-        </label>
+      <h3 class="display-4">Deferred Elite Plans</h3>
+      <div class="row">
+        <p class="col-sm-10">
+          Single-origin coffee thundercats hashtag kickstarter bicycle rights. Helvetica semiotics mustache stumptown
+          gluten-free authentic messenger bag portland deep v sustainable.
+        </p>
+        <div class="col-sm-2 align-items-end">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="yes" name="partD" id="s4y">
+            <label class="form-check-label" for="s4y">yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="no" name="partD" id="s4n">
+            <label class="form-check-label" for="s4n">no</label>
+          </div>
+        </div>
       </div>
       <button type="button" class="btn btn-secondary section-submit">page 5</button>
     </div>
+
+
+    <div class="section" id="section-five">
+      <h3 class="display-4">Simplified Elite Plans</h3>
+      <div class="row">
+        <p class="col-sm-10">
+          Marfa wayfarers gentrify prism, snackwave tattooed art party freegan enamel pin etsy gluten-free. Narwhal put a bird
+          on it poke single-origin coffee PBR&B gluten-free.
+        </p>
+        <div class="col-sm-2 align-items-end">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="yes" name="partE" id="s5y">
+            <label class="form-check-label" for="s5y">yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="no" name="partE" id="s5n">
+            <label class="form-check-label" for="s5n">no</label>
+          </div>
+        </div>      
+      </div>
+      <button type="button" class="btn btn-secondary section-submit">page 6</button>
+    </div>
+
 
     <div class="section" id="submit">
       <button class="btn btn-secondary" type="submit">Submit</button>
@@ -103,6 +143,17 @@
   </form>
 
 </div>
+
+<!-- jQuery must be loaded before script utilizing it -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <!-- bootstrap functionality -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 <script src="/test.js"></script>
 
 <% include partials/footer %>
