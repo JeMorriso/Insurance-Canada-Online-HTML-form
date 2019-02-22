@@ -20,21 +20,38 @@ $(".section-submit").on("click", function() {
   // hide the section
   section.hide();
   //figure out if next section should be shown
-  showNextSection(section)
+  showRelativeSection(section, "next");
 });
 
-function showNextSection(currSection) {
+$(".section-prev").on("click", function () {
+  var section = $(this).parent();
+  // hide the section
+  section.hide();
+  //figure out if next section should be shown
+  showRelativeSection(section, "prev");
+});
+
+// called by event listeners on go back / forward buttons
+function showRelativeSection(currSection, relativePos) {
   // get array of sections
   var sectionArray = $(".section");
   var dex = sectionArray.index(currSection);
-  var nextSection = sectionArray.eq(dex+1);
 
-  // if any questions were answered yes, then don't show the next section
-  // select all checked radion buttons in current section and iterate
+  var relativeSection;
+
+  if (relativePos == "next") {
+    relativeSection = sectionArray.eq(dex+1);
+  } else if (relativePos == "prev") {
+    relativeSection = sectionArray.eq(dex-1);
+  }
+
+  // always true for go back button
   var shouldShow = true;
 
-  // always show section 2
-  if (dex != 0) {
+  // for forward button, if any questions were answered yes, then don't show the next section
+  // select all checked radion buttons in current section and iterate
+  // always show section 2 (see pdf)
+  if (dex != 0 && relativePos=="next") {
     $('#'+currSection.attr('id') + " input:radio:checked").each(function() {
 
       if ($(this).val() == 'yes') {
@@ -45,13 +62,14 @@ function showNextSection(currSection) {
 
   if (shouldShow) {
     // consider ajax load from file - use object (dictionary) to store files for each section index<->file
-    nextSection.toggle();
+    relativeSection.toggle();
   } 
-  // show submit button if no more questions to answer
+  // FIX THIS- show submit button if insurance rate has been determined
   else {
     sectionArray.eq(sectionArray.length-1).toggle();
   }
 }
+
 
 // function completedSectionAlert() {
 //   if (smoker && otherInsurance) {
