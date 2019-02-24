@@ -29,9 +29,27 @@ app.post("/", function(req, res) {
     var submittedData = req.body;
     console.log(typeof submittedData);
     console.log(submittedData);
-    
-    res.render("page2", {input: submittedData});
-});
+
+    res.render("page2", { input: submittedData });
+    var qualifyMessage;
+    var qualifyDict = { "partB": "Guaranteed Acceptance Life"};
+    // partC
+    // partD         
+    // partE
+  });
+
+//     res.render("page2", {input: submittedData});
+
+//     for (var key in submittedData) {
+//       if (key == "smoker" || key == "otherInsurance") {
+//         continue;
+//       } else {
+//         if (submittedData[key] == "yes") {
+//           qualifyMessage = "You qualify for "
+//         }
+//       }
+//     };
+// };
 
 app.get("/submission", function(req, res) {
     res.render("page2", {input: req.body});

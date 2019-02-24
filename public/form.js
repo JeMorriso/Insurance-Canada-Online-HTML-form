@@ -11,16 +11,29 @@ $("#otherInsurance").on("change", function() {
   otherInsurance = ($("input[name='otherInsurance']:checked").val() == 'yes');
 });
 
-// put event listener on each section so that if yes is ever selected we know not to go to the next section
-$("#section-two").on("change", function() {
-  otherInsurance = ($("input[name='otherInsurance']:checked").val() == 'yes');
-});
+// // put event listener on each section so that if yes is ever selected we know not to go to the next section
+// $("#section-two").on("change", function() {
+//   otherInsurance = ($("input[name='otherInsurance']:checked").val() == 'yes');
+// });
+
+// if type is submit we want to pass a hidden input to backend so that we can figure out what plan user qualifies for. Then post /request takes care of submission
+// $("#form").submit(function (e) {
+//   var sectionId = $(this).parent().attr('id');
+
+//   $('<input />').attr('type', 'hidden')
+//     .attr('name', sectionId)
+//     .attr('value', sectionId)
+//     .appendTo('#form');
+//   return true;
+// });
 
 $(".section-submit").on("click", function() {
-  // if type is submit this event handler does nothing. Post request takes care of change.
+
+  // if button type is submit gets handled by above method
   if ($(this).attr("type") != "button") {
     return;
   }
+
   var section = $(this).parent();
   // hide the section
   section.hide();
