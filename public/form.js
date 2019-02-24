@@ -17,7 +17,7 @@ $("#section-two").on("change", function() {
 });
 
 $(".section-submit").on("click", function() {
-  // type submit goes to page 2.
+  // if type is submit this event handler does nothing. Post request takes care of change.
   if ($(this).attr("type") != "button") {
     return;
   }
@@ -37,8 +37,20 @@ $(".section-prev").on("click", function () {
 });
 
 // want to change next page button to type submit whenever yes is clicked, so add an event listener to each radio button instead of only just the end of page buttons
-$(".yes-check").on("change", function () {
-  if ($(this).find("input:checked").val() == "yes") {
+$(".radio-monitor").on("change", function () {
+  // add background to checked button, and remove it from unchecked button
+  var inputs = $(this).find("input");
+  inputs.each(function() {
+    var label = $("label[for='" + $(this).attr('id') + "']");
+    if ($(this).is(":checked")) {
+      label.addClass("radio-bg");
+    } else {
+      label.removeClass("radio-bg");
+    }
+  });
+
+  // section one should always proceed to section 2
+  if ($(this).find("input:checked").val() == "yes" && $(this).closest(".section").attr("id") != "section-one") {
     // change next page button to submit
     $(this).parent().children("button.section-submit").prop("type", "submit");
   } 
@@ -63,30 +75,6 @@ function showRelativeSection(currSection, relativePos) {
   }
 
   relativeSection.toggle();
-
-  // // always true for go back button
-  // var shouldShow = true;
-
-  // // for forward button, if any questions were answered yes, then don't show the next section
-  // // select all checked radion buttons in current section and iterate
-  // // always show section 2 (see pdf)
-  // if (dex != 0 && relativePos=="next") {
-  //   $('#'+currSection.attr('id') + " input:radio:checked").each(function() {
-
-  //     if ($(this).val() == 'yes') {
-  //       shouldShow = false;
-  //     }
-  //   });
-  // }
-
-  // if (shouldShow) {
-  //   // consider ajax load from file - use object (dictionary) to store files for each section index<->file
-  //   relativeSection.toggle();
-  // } 
-  // // FIX THIS- show submit button if insurance rate has been determined
-  // else {
-  //   sectionArray.eq(sectionArray.length-1).toggle();
-  // }
 }
 
 

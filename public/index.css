@@ -22,3 +22,29 @@
 #section-one {
   display: block;
 }
+
+.left-radio {
+  border: 3px solid rgb(0, 148, 255);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  text-align: center;
+  /* height: 4rem; */
+  font-size: 0.75rem;
+}
+/* NEED TO HARDCODE THE LABEL WIDTHS HERE */
+.right-radio {
+  border: 3px solid rgb(0, 148, 255);
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  text-align: center;
+  /* height: 4rem; */
+  font-size: 0.75rem;  
+}
+
+.radio-bg {
+  background: #FBFF92;
+}
+
+input {
+  display: none;
+}
