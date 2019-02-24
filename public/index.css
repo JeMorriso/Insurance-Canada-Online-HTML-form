@@ -14,7 +14,7 @@
   background-color: rgb(185, 225, 255);
 }
 
-/* Each section except the first should be hidden when wizard is first displayed */
+/* Each section     except the first should be hidden when wizard is first displayed */
 .section {
   display: none;
 }
@@ -24,21 +24,15 @@
 }
 
 .left-radio {
-  border: 3px solid rgb(0, 148, 255);
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
-  text-align: center;
-  /* height: 4rem; */
-  font-size: 0.75rem;
+  text-align: right;
 }
 /* NEED TO HARDCODE THE LABEL WIDTHS HERE */
 .right-radio {
-  border: 3px solid rgb(0, 148, 255);
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-  text-align: center;
-  /* height: 4rem; */
-  font-size: 0.75rem;  
+  text-align: left;
 }
 
 .radio-bg {
@@ -47,4 +41,17 @@
 
 input {
   display: none;
+}
+
+label {
+  border: 3px solid rgb(0, 148, 255);
+  display: inline-block;
+  width: 70px;
+  float: left;
+  /* text-align: center; */
+  /* font-size: 0.7rem;   */
+}
+
+.fixed-col {
+  flex: 0 0 200px;
 }
