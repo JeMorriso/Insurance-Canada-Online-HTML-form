@@ -17,20 +17,25 @@ $("#otherInsurance").on("change", function() {
 // });
 
 // if type is submit we want to pass a hidden input to backend so that we can figure out what plan user qualifies for. Then post /request takes care of submission
-// $("#form").submit(function (e) {
-//   var sectionId = $(this).parent().attr('id');
+// event delegation here
+$(".section").on("click", ".form-submit", function (e) {
+  // e.target is element causing event
+  // section needs to be converted into jQuery object
+  var sectionId = $(e.target.closest(".section")).attr("id");
 
-//   $('<input />').attr('type', 'hidden')
-//     .attr('name', sectionId)
-//     .attr('value', sectionId)
-//     .appendTo('#form');
-//   return true;
-// });
+  $('<input />').attr('type', 'hidden')
+    .attr('name', "section")
+    .attr('value', sectionId)
+    .appendTo('form');
+
+  $("form").submit();
+});
 
 $(".section-submit").on("click", function() {
+  // if class form-submit gets handled by above method
+  var activeClasses = $(this).attr("class").split(" ");
 
-  // if button type is submit gets handled by above method
-  if ($(this).attr("type") != "button") {
+  if (jQuery.inArray("form-submit", activeClasses) !== -1) {
     return;
   }
 
@@ -64,12 +69,11 @@ $(".radio-monitor").on("change", function () {
 
   // section one should always proceed to section 2
   if ($(this).find("input:checked").val() == "yes" && $(this).closest(".section").attr("id") != "section-one") {
-    // change next page button to submit
-    $(this).parent().children("button.section-submit").prop("type", "submit");
+    $(this).parent().children("button.section-submit").addClass("form-submit");
   } 
   // if value is being changed back to no, change the button type back to button
   else {
-    $(this).parent().children("button.section-submit").prop("type", "button");
+    $(this).parent().children("button.section-submit").removeClass("form-submit");
   }
 });
 
