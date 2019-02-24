@@ -55,3 +55,20 @@ label {
 .fixed-col {
   flex: 0 0 200px;
 }
+
+#form-container {
+  border-radius: 15px 50px;
+}
+
+h3 {
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+
+}
