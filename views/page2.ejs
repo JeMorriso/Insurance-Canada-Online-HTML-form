@@ -1,6 +1,6 @@
 <% include partials/header %>
 
-  <h1><i>You've reached page 2 of Reagan's Regal Insurance Site! Congratulations, your submission was successful!</i></h1>
+  <h1><i>Congratulations! <%= message %></i></h1>
   <% console.log(input) %>
   <% Object.keys(input).forEach(function(item) { %>
       <li><%= item %>: <%= input[item] %></li>

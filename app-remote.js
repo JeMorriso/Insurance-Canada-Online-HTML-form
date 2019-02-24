@@ -9,8 +9,8 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 
-app.use(express.static(__dirname + "/public"));
-app.use(express.static(__dirname + "/lib"));
+app.use(express.static("public"));
+app.use(express.static("lib"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
@@ -25,12 +25,20 @@ app.get("/", function(req, res) {
 });
 
 // just a tester post request - should really be adding this info to a database
-app.post("/", function(req, res) {
-    var submittedData = req.body;
-    console.log(typeof submittedData);
-    console.log(submittedData);
-    
-    res.render("page2", {input: submittedData});
+app.post("/", function (req, res) {
+  var qualifyDict = {
+    "section-two": "Guaranteed Acceptance Life",
+    "section-three": "Deferred Life",
+    "section-four": "Deferred Elite Plans",
+    "section-five": "Simplified Elite Plans, Preferred Plans, and Preferred Elite Plans"
+  };
+  var submittedData = req.body;
+  console.log(submittedData);
+  var qualification = qualifyDict[submittedData["section"]];
+  var qualifyMessage = "You have qualified for " + qualification + ".";
+  console.log(qualifyMessage);
+
+  res.render("page2", { input: submittedData, message: qualifyMessage });
 });
 
 app.get("/submission", function(req, res) {

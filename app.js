@@ -26,30 +26,20 @@ app.get("/", function(req, res) {
 
 // just a tester post request - should really be adding this info to a database
 app.post("/", function(req, res) {
+    var qualifyDict = {
+      "section-two": "Guaranteed Acceptance Life",
+      "section-three": "Deferred Life",
+      "section-four": "Deferred Elite Plans",
+      "section-five": "Simplified Elite Plans, Preferred Plans, and Preferred Elite Plans"
+    };
     var submittedData = req.body;
-    console.log(typeof submittedData);
     console.log(submittedData);
+    var qualification = qualifyDict[submittedData["section"]];
+    var qualifyMessage = "You have qualified for " + qualification + ".";
+    console.log(qualifyMessage);
 
-    res.render("page2", { input: submittedData });
-    var qualifyMessage;
-    var qualifyDict = { "partB": "Guaranteed Acceptance Life"};
-    // partC
-    // partD         
-    // partE
-  });
-
-//     res.render("page2", {input: submittedData});
-
-//     for (var key in submittedData) {
-//       if (key == "smoker" || key == "otherInsurance") {
-//         continue;
-//       } else {
-//         if (submittedData[key] == "yes") {
-//           qualifyMessage = "You qualify for "
-//         }
-//       }
-//     };
-// };
+    res.render("page2", { input: submittedData, message: qualifyMessage });
+});
 
 app.get("/submission", function(req, res) {
     res.render("page2", {input: req.body});
