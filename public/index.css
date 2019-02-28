@@ -52,8 +52,13 @@ label {
   /* font-size: 0.7rem;   */
 }
 
+.error {
+  border: none;
+
+}
+
 .fixed-col {
-  flex: 0 0 200px;
+  flex: 0 0 300px;
 }
 
 #form-container {

@@ -2,6 +2,36 @@ var smoker;
 var otherInsurance;
 var yesClicked = false;
 
+var v = $("#eligibility-form").validate({
+  ignore: ".ignore",
+  // rules: {
+  //   smoker: { fieldsetReq: true }
+  // },
+  errorPlacement: function (error, element) {
+    element.siblings(".right-radio").after(error);
+  }
+});
+
+// // add class rule for all fieldsetRequired so that they trigger addMethod above
+// $.validator.addClassRules('fieldsetRequired', {
+//   fieldsetReq: true
+// })
+
+// // add custom validator method that works on each fieldset
+// $.validator.addMethod("fieldsetReq", function (value, element) {
+
+//   // function match(index) {
+//   //   return current == index && $(element).parents("#sf" + (index + 1)).length;
+//   // }
+//   // if (match(0) || match(1) || match(2)) {
+//   //   return !this.optional(element);
+//   // }
+//   // return "dependency-mismatch";
+
+//   return false;
+
+// }, $.validator.messages.required)
+
 // when user fills out smoking status, grab the value to use for control flow
 $("#smoker").on("change", function() {
   smoker = ($("input[name='smoker']:checked").val() == 'yes');
@@ -38,18 +68,20 @@ $(".section-submit").on("click", function() {
   if (jQuery.inArray("form-submit", activeClasses) !== -1) {
     return;
   }
-
-  var section = $(this).parent();
-  // hide the section
-  section.hide();
-  // show next section
-  showRelativeSection(section, "next");
+  
+  if (v.form()) {
+    var section = $(this).parent();
+    // hide the section
+    hideCurrentSection(section)
+    // show next section
+    showRelativeSection(section, "next");
+  }
 });
 
 $(".section-prev").on("click", function () {
   var section = $(this).parent();
   // hide the section
-  section.hide();
+  hideCurrentSection(section)
   //figure out if next section should be shown
   showRelativeSection(section, "prev");
 });
@@ -77,6 +109,14 @@ $(".radio-monitor").on("change", function () {
   }
 });
 
+function hideCurrentSection(section) {
+  // toggle ignore class for validation
+  var fuck = section.find(".fieldsetRequired")
+
+  section.find(".fieldsetRequired").addClass("ignore");
+  section.hide();
+}
+
 // called by event listeners on go back / forward buttons
 function showRelativeSection(currSection, relativePos) {
   // get array of sections
@@ -91,6 +131,8 @@ function showRelativeSection(currSection, relativePos) {
     relativeSection = sectionArray.eq(dex-1);
   }
 
+  var fuck = relativeSection.find(".fieldsetRequired")
+  relativeSection.find(".fieldsetRequired").removeClass("ignore");
   relativeSection.toggle();
 }
 
