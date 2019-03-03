@@ -122,7 +122,7 @@ function addRemainingProgressIcons(dex) {
 
 function hideCurrentSection(section) {
   section.find(".fieldsetRequired").addClass("ignore");
-  section.hide();
+  section.fadeOut(100);
 }
 
 function toggleProgressIcon(dex, relativePos) {
@@ -149,7 +149,7 @@ function showRelativeSection(dex, sectionArray, relativePos) {
     relativeSection = sectionArray.eq(dex-1);
   }
   relativeSection.find(".fieldsetRequired").removeClass("ignore");
-  relativeSection.toggle();
+  relativeSection.fadeToggle(700);
 }
 
 

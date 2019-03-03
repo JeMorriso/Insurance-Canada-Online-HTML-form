@@ -68,9 +68,12 @@ input {
 
 .progress-icon-hide {
   background-color: rgb(185, 225, 255);
+  /* visibility: hidden; */
+  /* opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear; */
 }
 
-/* Each section     except the first should be hidden when wizard is first displayed */
+/* Each section except the first should be hidden when wizard is first displayed */
 .section {
   display: none;
 }
