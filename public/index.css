@@ -32,6 +32,7 @@ input {
 
 #body-custom-styling {
   background-color: rgb(185, 225, 255);
+  /* font-size: 30px; */
 }
 
 .progress-container {
