@@ -36,42 +36,52 @@
   
   <!--action is just the URL-->
   <form id="eligibility-form" action="/" method="POST">
+
     <fieldset class="section" id="section-one">
       <h3 class="display-4">Eligibility Questions</h3>
       <!-- bootstrap grids -->
       <!-- smoker div needed for control flow -->
       <!-- use bootstrap form-group class and wrap in divs once I fill out each page -->
-      <div class="row" id="smoker">
-        <p class="col">
+      <div class="row align-items-end">
+        <p class="col-lg-9">
           Cred meditation venmo, actually hammock you probably haven't heard of them trust fund activated charcoal. Poutine
           tote bag truffaut lomo readymade, hoodie edison bulb cronut shaman normcore single-origin coffee godard hashtag
           glossier.
         </p>
-        <div class="col fixed-col align-self-end radio-monitor pb-2">
-            <input type="radio" name="smoker" id="smokerYes" value="yes" class="fieldsetRequired" required>
-            <label class="left-radio p-2" for="smokerYes">yes</label>
-            <input type="radio" name="smoker" id="smokerNo" value="no">
-            <label class="right-radio p-2" for="smokerNo">no</label>
+        <!-- <div class="col fixed-col align-self-end radio-monitor pb-2"></div> -->
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="smoker" id="smokerYes" value="yes" class="fieldsetRequired" required>
+              <label class="left-radio p-2" for="smokerYes">yes</label>
+              <input type="radio" name="smoker" id="smokerNo" value="no">
+              <label class="right-radio p-2" for="smokerNo">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
         </div>
       </div>
 
-      <div class="row" id="otherInsurance">
-        <p class="col">
-          Kitsch small batch adaptogen truffaut, skateboard DIY VHS. Williamsburg ethical austin, prism biodiesel pop-up cray
-          asymmetrical skateboard copper mug craft beer.
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Kitsch small batch adaptogen truffaut, skateboard DIY VHS. Williamsburg ethical austin, prism biodiesel pop-up cray asymmetrical skateboard copper mug craft beer.
         </p>
-        <div class="col fixed-col align-self-end radio-monitor pb-2">
-            <input type="radio" name="otherInsurance" id="otherYes" value="yes" class="fieldsetRequired" required>
-            <label class="left-radio p-2" for="otherYes">yes</label>
-            <input type="radio" name="otherInsurance" id="otherNo" value="no">
-            <label class="right-radio p-2" for="otherNo">no</label>   
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="otherInsurance" id="otherYes" value="yes" class="fieldsetRequired" required>
+              <label class="left-radio p-2" for="otherYes">yes</label>
+              <input type="radio" name="otherInsurance" id="otherNo" value="no">
+              <label class="right-radio p-2" for="otherNo">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
         </div>
       </div>
       <button type="button" class="btn btn-secondary section-submit">next page</button>
     </fieldset>
 
-
-    <fieldset class="section ignoreSection" id="section-two">
+    <!-- <fieldset class="section ignoreSection" id="section-two">
       <h3 class="display-4">Guaranteed Acceptance Life</h3>
       <div class="row radio-monitor">
         <p class="col">
@@ -79,12 +89,221 @@
           tattooed. Lyft godard cold-pressed swag tbh DIY. Actually drinking vinegar hot chicken selvage keffiyeh chia pug.
         </p>
         <div class="col fixed-col align-self-end radio-monitor pb-2 ">
-            <input type="radio" name="partB" id="s2y" value="yes" class="ignore fieldsetRequired" required>
-            <label class="left-radio p-2" for="s2y">yes</label>
-            <input type="radio" name="partB" id="s2n" value="no">
-            <label class="right-radio p-2" for="s2n">no</label>   
+          <input type="radio" name="partB" id="s2y" value="yes" class="ignore fieldsetRequired" required>
+          <label class="left-radio p-2" for="s2y">yes</label>
+          <input type="radio" name="partB" id="s2n" value="no">
+          <label class="right-radio p-2" for="s2n">no</label>
         </div>
-      </div>      
+      </div>
+      <button type="button" class="btn btn-info section-prev">go back</button>
+      <button type="button" class="btn btn-secondary section-submit">next page</button>
+    </fieldset> -->
+
+    <fieldset class="section" id="section-two">
+      <h3 class="display-4">Guaranteed Acceptance Life</h3>
+
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Live-edge farm-to-table humblebrag mumblecore flexitarian pabst blog. 90's letterpress YOLO listicle chicharrones
+          tattooed. Lyft godard cold-pressed swag tbh DIY. Actually drinking vinegar hot chicken selvage keffiyeh chia pug.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="partB" id="s2y" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2y">yes</label>
+              <input type="radio" name="partB" id="s2n" value="no">
+              <label class="right-radio p-2" for="s2n">no</label>
+            </div>
+            <div class ="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Yuccie flexitarian glossier, vape master cleanse raclette tumblr brooklyn salvia. Tumeric neutra drinking vinegar
+          intelligentsia fixie marfa ennui tousled, adaptogen normcore scenester seitan.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2b" id="s2by" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2by">yes</label>
+              <input type="radio" name="s2b" id="s2bn" value="no">
+              <label class="right-radio p-2" for="s2bn">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Four dollar toast single-origin coffee flannel slow-carb blue bottle letterpress kitsch lyft, paleo XOXO actually VHS
+          90's thundercats whatever.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2c" id="s2cy" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2cy">yes</label>
+              <input type="radio" name="s2c" id="s2cn" value="no">
+              <label class="right-radio p-2" for="s2cn">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Taxidermy prism dreamcatcher venmo cold-pressed brunch fingerstache +1 farm-to-table mixtape tote bag.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2d" id="s2dy" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2dy">yes</label>
+              <input type="radio" name="s2d" id="s2dn" value="no">
+              <label class="right-radio p-2" for="s2dn">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Kale chips mlkshk kickstarter, ethical slow-carb chartreuse leggings portland letterpress umami XOXO mustache knausgaard
+          plaid vice. Tbh glossier viral whatever pickled tote bag. Cliche wayfarers succulents, subway tile four dollar toast
+          next level prism.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2e" id="s2ey" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2ey">yes</label>
+              <input type="radio" name="s2e" id="s2en" value="no">
+              <label class="right-radio p-2" for="s2en">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Portland messenger bag green juice man bun tumblr, kinfolk glossier 8-bit squid four loko gochujang kale chips.
+          Pour-over squid narwhal chia bicycle rights man bun unicorn schlitz skateboard vinyl prism echo park mumblecore
+          biodiesel poutine.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2f" id="s2fy" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2fy">yes</label>
+              <input type="radio" name="s2f" id="s2fn" value="no">
+              <label class="right-radio p-2" for="s2fn">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Cardigan forage disrupt fashion axe activated charcoal, iPhone retro fam wolf microdosing palo santo flannel coloring
+          book austin swag.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2g" id="s2gy" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2gy">yes</label>
+              <input type="radio" name="s2g" id="s2gn" value="no">
+              <label class="right-radio p-2" for="s2gn">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Cloud bread fam adaptogen tbh. Four loko mlkshk PBR&B cred shaman photo booth knausgaard pinterest pour-over.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2h" id="s2hy" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2hy">yes</label>
+              <input type="radio" name="s2h" id="s2hn" value="no">
+              <label class="right-radio p-2" for="s2hn">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Vegan mixtape narwhal, gentrify coloring book umami twee butcher master cleanse polaroid prism aesthetic typewriter
+          meggings four dollar toast.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2i" id="s2iy" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="2isy">yes</label>
+              <input type="radio" name="s2i" id="s2in" value="no">
+              <label class="right-radio p-2" for="s2in">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Everyday carry kitsch heirloom, waistcoat succulents VHS gluten-free gastropub ethical helvetica tumeric.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2j" id="s2jy" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2jy">yes</label>
+              <input type="radio" name="s2j" id="s2jn" value="no">
+              <label class="right-radio p-2" for="s2jn">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Vape art party activated charcoal cold-pressed schlitz, retro narwhal wolf. IPhone sustainable tacos gluten-free irony
+          master cleanse.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2k" id="s2ky" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2ky">yes</label>
+              <input type="radio" name="s2k" id="s2kn" value="no">
+              <label class="right-radio p-2" for="s2kn">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Church-key fixie knausgaard tattooed, yuccie craft beer hot chicken raclette activated charcoal affogato pickled retro.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s2l" id="s2ly" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s2ly">yes</label>
+              <input type="radio" name="s2l" id="s2ln" value="no">
+              <label class="right-radio p-2" for="s2ln">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
       <button type="button" class="btn btn-info section-prev">go back</button>
       <button type="button" class="btn btn-secondary section-submit">next page</button>
     </fieldset>
@@ -92,58 +311,343 @@
 
     <fieldset class="section" id="section-three">
       <h3 class="display-4">Deferred Life</h3>
-      <div class="row radio-monitor">
-        <p class="col">
+      <div class="row align-items-end">
+        <p class="col-lg-9">
           Health goth vaporware try-hard fam, before they sold out etsy tilde shabby chic vape pabst cray. Raclette tacos wolf
           pork belly chia try-hard pok pok craft beer celiac.
         </p>
-        <div class="col fixed-col align-self-end radio-monitor pb-2">
-            <input type="radio" name="partC" id="s3y" value="yes" class="ignore fieldsetRequired" required>
-            <label class="left-radio p-2" for="s3y">yes</label>
-            <input type="radio" name="partC" id="s3n" value="no">
-            <label class="right-radio p-2" for="s3n">no</label>   
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="partC" id="s3y" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s3y">yes</label>
+              <input type="radio" name="partC" id="s3n" value="no">
+              <label class="right-radio p-2" for="s3n">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-end">
+        <p class="col-lg-9">
+          Copper mug green juice cliche blog bushwick literally organic distillery butcher lyft keytar palo santo fanny pack. Put
+          a bird on it butcher jianbing pop-up gochujang chambray pour-over live-edge craft beer shabby chic vaporware. Ramps
+          everyday carry hoodie neutra.
+        </p>
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="s3b" id="s3by" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s3by">yes</label>
+              <input type="radio" name="s3b" id="s3bn" value="no">
+              <label class="right-radio p-2" for="s3bn">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
         </div>
       </div>
       <button type="button" class="btn btn-info section-prev">go back</button>
       <button type="button" class="btn btn-secondary section-submit">next page</button>
     </fieldset>
-
 
     <fieldset class="section" id="section-four">
       <h3 class="display-4">Deferred Elite Plans</h3>
-      <div class="row radio-monitor">
-        <p class="col">
+      <div class="row align-items-end">
+        <p class="col-lg-9">
           Single-origin coffee thundercats hashtag kickstarter bicycle rights. Helvetica semiotics mustache stumptown
           gluten-free authentic messenger bag portland deep v sustainable.
         </p>
-        <div class="col fixed-col align-self-end radio-monitor pb-2">
-            <input type="radio" name="partD" id="s4y" value="yes" class="ignore fieldsetRequired" required>
-            <label class="left-radio p-2" for="s4y">yes</label>
-            <input type="radio" name="partD" id="s4n" value="no">
-            <label class="right-radio p-2" for="s4n">no</label>   
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="partD" id="s4y" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s4y">yes</label>
+              <input type="radio" name="partD" id="s4n" value="no">
+              <label class="right-radio p-2" for="s4n">no</label>
+            </div> 
+            <div class="col error-message p-2"></div>
+          </div>
         </div>
       </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Adaptogen cloud bread prism fashion axe brunch keffiyeh, thundercats gluten-free live-edge snackwave blue bottle.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4b" id="s4by" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4by">yes</label>
+                <input type="radio" name="s4b" id="s4bn" value="no">
+                <label class="right-radio p-2" for="s4bn">no</label>
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Heirloom meggings tumblr hoodie snackwave, mumblecore marfa biodiesel slow-carb health goth retro ennui lumbersexual
+            fashion axe. Swag everyday carry chicharrones, pitchfork PBR&B etsy cray lyft.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4c" id="s4cy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4cy">yes</label>
+                <input type="radio" name="s4c" id="s4cn" value="no">
+                <label class="right-radio p-2" for="s4cn">no</label>
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Vinyl butcher biodiesel swag fixie, schlitz gochujang wolf 8-bit 3 wolf moon listicle selfies cliche unicorn. Photo
+            booth brunch synth tacos cloud bread freegan.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4d" id="s4dy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4dy">yes</label>
+                <input type="radio" name="s4d" id="s4dn" value="no">
+                <label class="right-radio p-2" for="s4dn">no</label>
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Messenger bag you probably haven't heard of them kickstarter etsy retro bitters marfa. Kombucha synth shabby chic,
+            stumptown mumblecore migas activated charcoal quinoa flexitarian poutine succulents pug +1 jean shorts selvage.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4e" id="s4ey" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4ey">yes</label>
+                <input type="radio" name="s4e" id="s4en" value="no">
+                <label class="right-radio p-2" for="s4en">no</label>
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Bespoke woke meditation organic iPhone, tbh you probably haven't heard of them bushwick kinfolk meh wolf godard yr
+            sriracha disrupt.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4f" id="s4fy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4fy">yes</label>
+                <input type="radio" name="s4f" id="s4fn" value="no">
+                <label class="right-radio p-2" for="s4fn">no</label>
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            La croix hoodie street art celiac air plant ennui distillery hashtag taxidermy godard drinking vinegar meh offal.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4g" id="s4gy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4gy">yes</label>
+                <input type="radio" name="s4g" id="s4gn" value="no">
+                <label class="right-radio p-2" for="s4gn">no</label>
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Celiac poutine vaporware normcore quinoa sartorial photo booth synth shoreditch skateboard humblebrag whatever iceland
+            glossier tattooed. Helvetica yr photo booth pok pok gluten-free vinyl. Lumbersexual VHS heirloom disrupt yuccie drinking
+            vinegar everyday carry, bespoke DIY migas.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4h" id="s4hy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4hy">yes</label>
+                <input type="radio" name="s4h" id="s4hn" value="no">
+                <label class="right-radio p-2" for="s4hn">no</label>
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Narwhal 90's tbh trust fund lumbersexual hexagon mustache four dollar toast copper mug wolf migas hell of. Woke cronut
+            freegan taiyaki bushwick hoodie locavore DIY hammock. Vape whatever occupy iPhone, dreamcatcher synth fashion axe paleo
+            man braid.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4i" id="s4iy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4iy">yes</label>
+                <input type="radio" name="s4i" id="s4in" value="no">
+                <label class="right-radio p-2" for="s4in">no</label>                
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Flannel forage yr, tousled distillery mumblecore yuccie health goth trust fund sriracha food truck coloring book
+            tattooed cornhole lomo. Taxidermy 8-bit beard, messenger bag lo-fi pok pok stumptown man bun organic blog celiac
+            intelligentsia readymade palo santo.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4j" id="s4jy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4jy">yes</label>
+                <input type="radio" name="s4j" id="s4jn" value="no">
+                <label class="right-radio p-2" for="s4jn">no</label>                
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Forage hexagon ennui ramps small batch master cleanse live-edge. Man bun lo-fi etsy banh mi paleo YOLO kinfolk
+            chicharrones green juice crucifix shaman messenger bag.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s4k" id="s4ky" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s4ky">yes</label>
+                <input type="radio" name="s4k" id="s4kn" value="no">
+                <label class="right-radio p-2" for="s4kn">no</label>                
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
       <button type="button" class="btn btn-info section-prev">go back</button>
       <button type="button" class="btn btn-secondary section-submit">next page</button>
     </fieldset>
-
 
     <fieldset class="section" id="section-five">
       <h3 class="display-4">Simplified Elite Plans</h3>
       <!-- don't have radio-monitor here since on last page -->
-      <div class="row">
-        <p class="col">
+      <div class="row align-items-end">
+        <p class="col-lg-9">
           Marfa wayfarers gentrify prism, snackwave tattooed art party freegan enamel pin etsy gluten-free. Narwhal put a bird
           on it poke single-origin coffee PBR&B gluten-free.
         </p>
-        <div class="col fixed-col align-self-end radio-monitor pb-2">
-            <input type="radio" name="partE" id="s5y" value="yes" class="ignore fieldsetRequired" required>
-            <label class="left-radio p-2" for="s5y">yes</label>
-            <input type="radio" name="partE" id="s5n" value="no">
-            <label class="right-radio p-2" for="s5n">no</label>   
+        <div class="col">
+          <div class="row align-items-end">
+            <div class="col fixed-col radio-monitor p-2">
+              <input type="radio" name="partE" id="s5y" value="yes" class="ignore fieldsetRequired" required>
+              <label class="left-radio p-2" for="s5y">yes</label>
+              <input type="radio" name="partE" id="s5n" value="no">
+              <label class="right-radio p-2" for="s5n">no</label>
+            </div>
+            <div class="col error-message p-2"></div>
+          </div>
         </div> 
       </div>
-      <button type="button" class="btn btn-info section-prev">go back</button>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Tofu pug polaroid, irony vice shabby chic artisan tousled single-origin coffee venmo roof party.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s5b" id="s5by" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s5by">yes</label>
+                <input type="radio" name="s5b" id="s5bn" value="no">
+                <label class="right-radio p-2" for="s5bn">no</label>
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Oh. You need a little dummy text for your mockup? How quaint.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s5c" id="s5cy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s5cy">yes</label>
+                <input type="radio" name="s5c" id="s5cn" value="no">
+                <label class="right-radio p-2" for="s5cn">no</label>
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Selfies hell of man bun, venmo selvage etsy pinterest chartreuse aesthetic polaroid +1. Try-hard iceland meggings migas,
+            pop-up pork belly twee godard health goth viral banh mi keytar yr readymade.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s5d" id="s5dy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s5dy">yes</label>
+                <input type="radio" name="s5d" id="s5dn" value="no">
+                <label class="right-radio p-2" for="s5dn">no</label>                
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Jianbing flexitarian put a bird on it direct trade, sartorial 8-bit vinyl retro gentrify wayfarers copper mug PBR&B
+            brunch health goth literally. Occupy raw denim man braid hashtag.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s5e" id="s5ey" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s5ey">yes</label>
+                <input type="radio" name="s5e" id="s5en" value="no">
+                <label class="right-radio p-2" for="s5en">no</label>                
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <p class="col-lg-9">
+            Fam small batch twee selvage normcore, shaman shoreditch tbh pabst forage. Fingerstache vegan freegan lomo, live-edge
+            gastropub etsy gentrify crucifix you probably haven't heard of them semiotics hashtag blog.
+          </p>
+          <div class="col">
+            <div class="row align-items-end">
+              <div class="col fixed-col radio-monitor p-2">
+                <input type="radio" name="s5f" id="s5fy" value="yes" class="ignore fieldsetRequired" required>
+                <label class="left-radio p-2" for="s5fy">yes</label>
+                <input type="radio" name="s5f" id="s5fn" value="no">
+                <label class="right-radio p-2" for="s5fn">no</label>                
+              </div>
+              <div class="col error-message p-2"></div>
+            </div>
+          </div>
+        </div>
+     <button type="button" class="btn btn-info section-prev">go back</button>
       <!-- last section defaults to submit -->
       <button type="button" class="btn btn-secondary form-submit">next page</button>
     </fieldset>

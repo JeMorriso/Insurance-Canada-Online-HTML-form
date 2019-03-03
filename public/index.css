@@ -5,9 +5,29 @@
 
 /* express knows to look in public directory */ 
 
+h3 {
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+input {
+  display: none;
+}
+
 .jumbotron {
   background-color: rgb(0, 148, 255);
   
+}
+
+#form-container {
+  border-radius: 15px 50px;
 }
 
 #body-custom-styling {
@@ -27,11 +47,6 @@
   display: flex;
   justify-content: space-between;
 }
-/* 
-.progress-step {
-  float: left;
-  display: block;
-} */
 
 .progress-icon {
   width: 1.25em;
@@ -68,22 +83,14 @@
   border-bottom-left-radius: 50%;
   text-align: right;
 }
-/* NEED TO HARDCODE THE LABEL WIDTHS HERE */
+
 .right-radio {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   text-align: left;
 }
 
-.radio-bg {
-  background: #FBFF92;
-}
-
-input {
-  display: none;
-}
-
-label {
+.left-radio, .right-radio {
   border: 3px solid rgb(0, 148, 255);
   display: inline-block;
   width: 70px;
@@ -92,28 +99,15 @@ label {
   /* font-size: 0.7rem;   */
 }
 
+.radio-bg {
+  background: #FBFF92;
+}
+
 .error {
   border: none;
-
+  font-size: 0.7em;
 }
 
 .fixed-col {
-  flex: 0 0 300px;
-}
-
-#form-container {
-  border-radius: 15px 50px;
-}
-
-h3 {
-  /* font-family: 'Poppins', sans-serif; */
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 400;
-
-}
-
-p {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-
+  flex: 0 0 170px;
 }

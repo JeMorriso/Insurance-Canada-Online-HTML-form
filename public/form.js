@@ -8,29 +8,10 @@ var v = $("#eligibility-form").validate({
   //   smoker: { fieldsetReq: true }
   // },
   errorPlacement: function (error, element) {
-    element.siblings(".right-radio").after(error);
+    element.closest(".row").find(".error-message").append(error);
+    //element.siblings(".right-radio").after(error);
   }
 });
-
-// // add class rule for all fieldsetRequired so that they trigger addMethod above
-// $.validator.addClassRules('fieldsetRequired', {
-//   fieldsetReq: true
-// })
-
-// // add custom validator method that works on each fieldset
-// $.validator.addMethod("fieldsetReq", function (value, element) {
-
-//   // function match(index) {
-//   //   return current == index && $(element).parents("#sf" + (index + 1)).length;
-//   // }
-//   // if (match(0) || match(1) || match(2)) {
-//   //   return !this.optional(element);
-//   // }
-//   // return "dependency-mismatch";
-
-//   return false;
-
-// }, $.validator.messages.required)
 
 // when user fills out smoking status, grab the value to use for control flow
 $("#smoker").on("change", function() {
