@@ -70,20 +70,30 @@ $(".section-submit").on("click", function() {
   }
   
   if (v.form()) {
-    var section = $(this).parent();
+    var section = $(this).closest(".section");
+    // get array of sections
+    var sectionArray = $(".section");
+    var dex = sectionArray.index(section);
     // hide the section
-    hideCurrentSection(section)
+    hideCurrentSection(section);
+    // toggle progress bar
+    toggleProgressIcon(dex, "next");
     // show next section
-    showRelativeSection(section, "next");
+    showRelativeSection(dex, sectionArray, "next");
   }
 });
 
 $(".section-prev").on("click", function () {
-  var section = $(this).parent();
+  var section = $(this).closest(".section");
+  // get array of sections
+  var sectionArray = $(".section");
+  var dex = sectionArray.index(section);
   // hide the section
   hideCurrentSection(section)
+  // toggle progress bar
+  toggleProgressIcon(dex, "prev")
   //figure out if next section should be shown
-  showRelativeSection(section, "prev");
+  showRelativeSection(dex, sectionArray, "prev");
 });
 
 // want to change next page button to type submit whenever yes is clicked, so add an event listener to each radio button instead of only just the end of page buttons
@@ -101,28 +111,55 @@ $(".radio-monitor").on("change", function () {
 
   // section one should always proceed to section 2
   if ($(this).find("input:checked").val() == "yes" && $(this).closest(".section").attr("id") != "section-one") {
-    $(this).parent().children("button.section-submit").addClass("form-submit");
+    $(this).closest(".section").children("button.section-submit").addClass("form-submit");
+    // hide all the progress icons after the current one
+    // get current icon index
+    var section = $(this).closest(".section");
+    // get array of sections
+    var sectionArray = $(".section");
+    var dex = sectionArray.index(section);
+    removeRemainingProgressIcons(dex);
   } 
   // if value is being changed back to no, change the button type back to button
   else {
-    $(this).parent().children("button.section-submit").removeClass("form-submit");
+    $(this).closest(".section").children("button.section-submit").removeClass("form-submit");
+    addRemainingProgressIcons(dex);
   }
 });
 
-function hideCurrentSection(section) {
-  // toggle ignore class for validation
-  var fuck = section.find(".fieldsetRequired")
+function removeRemainingProgressIcons(dex) {
+  $(".progress-icon").slice(dex+1).each(function () {
+    $(this).addClass("progress-icon-hide");
+  });
+}
 
+function addRemainingProgressIcons(dex) {
+  $(".progress-icon").slice(dex + 1).each(function () {
+    $(this).removeClass("progress-icon-hide");
+  });
+}
+
+function hideCurrentSection(section) {
   section.find(".fieldsetRequired").addClass("ignore");
   section.hide();
 }
 
-// called by event listeners on go back / forward buttons
-function showRelativeSection(currSection, relativePos) {
-  // get array of sections
-  var sectionArray = $(".section");
-  var dex = sectionArray.index(currSection);
+function toggleProgressIcon(dex, relativePos) {
+    // get li at index
+  var iconArray = $(".progress-icon");
+  var relativeIcon;
+  // index of relativeIcon same as relativeSection. 
+  if (relativePos == "next") {
+    relativeIcon = iconArray.eq(dex + 1);
+  } else if (relativePos == "prev") {
+    // if moving back just undo current coloring.
+    relativeIcon= iconArray.eq(dex);
+  }
+  relativeIcon.toggleClass("progress-icon-active-complete");
+}
 
+// called by event listeners on go back / forward buttons
+function showRelativeSection(dex, sectionArray, relativePos) {
   var relativeSection;
 
   if (relativePos == "next") {
@@ -130,8 +167,6 @@ function showRelativeSection(currSection, relativePos) {
   } else if (relativePos == "prev") {
     relativeSection = sectionArray.eq(dex-1);
   }
-
-  var fuck = relativeSection.find(".fieldsetRequired")
   relativeSection.find(".fieldsetRequired").removeClass("ignore");
   relativeSection.toggle();
 }
